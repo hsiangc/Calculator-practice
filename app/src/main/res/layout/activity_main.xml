@@ -41,10 +41,11 @@
                     android:layout_span="2"
                     android:background="@drawable/blue"
                     android:clickable="true"
-                    android:onClick="clickClear"
+                    android:onClick="clickBack"
                     android:text="@string/back"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="40dp"
+                    android:nestedScrollingEnabled="false" />
 
                 <Button
                     android:id="@+id/buttonc"

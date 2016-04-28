@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView display; //運算顯示
     public double finalNum, newNum;
     public String stringNum = "0"; //輸入的文字
+    public String temp = "0";//倒退鍵暫存
     public char opt;//按鈕選擇紀錄
     public boolean optonce;//防止重複
 
@@ -123,9 +124,11 @@ public class MainActivity extends AppCompatActivity {
         newNum = 0;
     }
 
-    public void back(View view){
+    public void clickBack(View view){
 
-
+            temp = display.getText().toString();
+            display.setText(temp.substring(0, temp.length() - 1));
+            stringNum = stringNum.substring(0, stringNum.length() - 1);
     }
 
 
