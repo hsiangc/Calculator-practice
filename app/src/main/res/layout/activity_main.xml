@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_column="3"
+        android:background="#d2f1f7"
+        android:text=""
+        android:textColor="#02032c"
+        android:textSize="50dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:layout_gravity="top">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:stretchColumns="*">
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/buttond"
+                    android:layout_column="0"
+                    android:layout_span="2"
+                    android:layout_toEndOf="@+id/button9"
+                    android:layout_toRightOf="@+id/button9"
+                    android:allowUndo="false"
+                    android:background="@drawable/blue"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickClear"
+                    android:singleLine="false"
+                    android:text="@string/clear"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+
+                <Button
+                    android:id="@+id/buttonc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/buttond"
+                    android:layout_column="2"
+                    android:layout_span="2"
+                    android:layout_toEndOf="@+id/button9"
+                    android:layout_toRightOf="@+id/button9"
+                    android:allowUndo="false"
+                    android:background="@drawable/red"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickClear"
+                    android:singleLine="false"
+                    android:text="@string/clear"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/button4"
+                    android:layout_alignLeft="@+id/button4"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignStart="@+id/button4"
+                    android:allowUndo="false"
+                    android:background="@drawable/blue"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickNum"
+                    android:singleLine="false"
+                    android:text="@string/seven"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+
+                <Button
+                    android:id="@+id/button8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/button5"
+                    android:layout_alignLeft="@+id/button5"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignStart="@+id/button5"
+                    android:layout_column="1"
+                    android:allowUndo="false"
+                    android:background="@drawable/blue"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickNum"
+                    android:singleLine="false"
+                    android:text="@string/eight"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+
+                <Button
+                    android:id="@+id/button9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/button6"
+                    android:layout_alignLeft="@+id/button6"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignStart="@+id/button6"
+                    android:layout_column="2"
+                    android:allowUndo="false"
+                    android:background="@drawable/blue"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickNum"
+                    android:singleLine="false"
+                    android:text="@string/nine"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+
+                <Button
+                    android:id="@+id/buttond"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignTop="@+id/button9"
+                    android:layout_column="3"
+                    android:layout_toEndOf="@+id/button9"
+                    android:layout_toRightOf="@+id/button9"
+                    android:allowUndo="false"
+                    android:background="@drawable/blue"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickDivide"
+                    android:singleLine="false"
+                    android:text="@string/divideby"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/button1"
+                    android:layout_alignLeft="@+id/button1"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignStart="@+id/button1"
+                    android:layout_column="0"
+                    android:allowUndo="false"
+                    android:background="@drawable/blue"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickNum"
+                    android:singleLine="false"
+                    android:text="@string/four"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/button2"
+                    android:layout_alignLeft="@+id/button2"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignStart="@+id/button2"
+                    android:layout_column="1"
+                    android:allowUndo="false"
+                    android:background="@drawable/blue"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickNum"
+                    android:singleLine="false"
+                    android:text="@string/five"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/button2"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_column="2"
+                    android:layout_toEndOf="@+id/button2"
+                    android:layout_toRightOf="@+id/button2"
+                    android:allowUndo="false"
+                    android:background="@drawable/blue"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickNum"
+                    android:singleLine="false"
+                    android:text="@string/six"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+
+                <Button
+                    android:id="@+id/buttonx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/button3"
+                    android:layout_column="3"
+                    android:layout_toEndOf="@+id/button3"
+                    android:layout_toRightOf="@+id/button3"
+                    android:allowUndo="false"
+                    android:background="@drawable/blue"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickMulti"
+                    android:singleLine="false"
+                    android:text="@string/multiply"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/buttonpt"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignRight="@+id/buttonpt"
+                    android:layout_alignTop="@+id/button2"
+                    android:layout_column="0"
+                    android:allowUndo="false"
+                    android:background="@drawable/blue"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickNum"
+                    android:singleLine="false"
+                    android:text="@string/one"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/buttone"
+                    android:layout_alignLeft="@+id/button0"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignStart="@+id/button0"
+                    android:layout_column="1"
+                    android:allowUndo="false"
+                    android:background="@drawable/blue"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickNum"
+                    android:singleLine="false"
+                    android:text="@string/two"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/buttone"
+                    android:layout_alignLeft="@+id/buttone"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignStart="@+id/buttone"
+                    android:layout_column="2"
+                    android:allowUndo="false"
+                    android:background="@drawable/blue"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickNum"
+                    android:singleLine="false"
+                    android:text="@string/three"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+
+                <Button
+                    android:id="@+id/buttonm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/button6"
+                    android:layout_column="3"
+                    android:layout_toEndOf="@+id/button3"
+                    android:layout_toRightOf="@+id/button3"
+                    android:allowUndo="false"
+                    android:background="@drawable/blue"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickMinus"
+                    android:singleLine="false"
+                    android:text="@string/minus"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/buttonpt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignTop="@+id/button0"
+                    android:layout_column="0"
+                    android:allowUndo="false"
+                    android:background="@drawable/blue"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickNum"
+                    android:singleLine="false"
+                    android:text="@string/point"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+
+                <Button
+                    android:id="@+id/button0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignTop="@+id/buttone"
+                    android:layout_column="1"
+                    android:layout_toEndOf="@+id/buttonpt"
+                    android:layout_toRightOf="@+id/buttonpt"
+                    android:allowUndo="false"
+                    android:background="@drawable/blue"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickNum"
+                    android:singleLine="false"
+                    android:text="@string/zero"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+
+                <Button
+                    android:id="@+id/buttone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/button6"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignRight="@+id/button6"
+                    android:layout_column="2"
+                    android:layout_toRightOf="@+id/button0"
+                    android:allowUndo="false"
+                    android:background="@drawable/red"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickEqual"
+                    android:singleLine="false"
+                    android:text="@string/equals"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+
+                <Button
+                    android:id="@+id/buttonp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/buttone"
+                    android:layout_column="3"
+                    android:layout_toEndOf="@+id/buttone"
+                    android:layout_toRightOf="@+id/buttone"
+                    android:allowUndo="false"
+                    android:background="@drawable/blue"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:onClick="clickPlus"
+                    android:singleLine="false"
+                    android:text="@string/plus"
+                    android:textAlignment="center"
+                    android:textSize="40dp" />
+
+            </TableRow>
+
+
+        </TableLayout>
+
+    </LinearLayout>
+</LinearLayout>
