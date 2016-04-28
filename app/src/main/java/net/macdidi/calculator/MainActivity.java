@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     public double finalNum, newNum;
     public String stringNum = "0"; //輸入的文字
     public char opt;//按鈕選擇紀錄
+    public boolean optonce;//防止重複
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
             display.setText("");
             opt = ' ';
         }
+        optonce=true;
 
         //顯示你輸入了什麼
         display.setText(display.getText().toString() + ((Button) view).getText());
@@ -64,51 +66,66 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickPlus(View view) {
 
-        newNum = Double.parseDouble(stringNum);
-        stringNum = "0";
-        calculate();
-        opt = 'p';
-        display.setText(display.getText().toString() + "" + "+" + "");
+        if(optonce!=false) {
+            newNum = Double.parseDouble(stringNum);
+            stringNum = "0";
+            calculate();
+            opt = 'p';
+            display.setText(display.getText().toString() + "" + "+" + "");
+            optonce = false;
+        }
 
     }
 
     public void clickMinus(View view) {
 
-        newNum = Double.parseDouble(stringNum);
-        stringNum = "0";
-        calculate();
-        opt = 'm';
-        display.setText(display.getText().toString() + "" + "-" + "");
+        if(optonce!=false) {
 
+            newNum = Double.parseDouble(stringNum);
+            stringNum = "0";
+            calculate();
+            opt = 'm';
+            display.setText(display.getText().toString() + "" + "-" + "");
+            optonce = false;
+        }
 
     }
 
     public void clickMulti(View view) {
 
-        newNum = Double.parseDouble(stringNum);
-        stringNum = "0";
-        calculate();
-        opt = 'x';
-        display.setText(display.getText().toString() + "" + "x" + "");
-
+        if(optonce!=false) {
+            newNum = Double.parseDouble(stringNum);
+            stringNum = "0";
+            calculate();
+            opt = 'x';
+            display.setText(display.getText().toString() + "" + "x" + "");
+            optonce = false;
+        }
     }
 
     public void clickDivide(View view) {
 
-
-        newNum = Double.parseDouble(stringNum);
-        stringNum = "0";
-        calculate();
-        opt = 'd';
-        display.setText(display.getText().toString() + "" + "÷" + "");
+        if(optonce!=false) {
+            newNum = Double.parseDouble(stringNum);
+            stringNum = "0";
+            calculate();
+            opt = 'd';
+            display.setText(display.getText().toString() + "" + "÷" + "");
+            optonce = false;
+        }
     }
 
     public void clickClear(View view) {
 
         display.setText("");
-        stringNum = "";
+        stringNum = "0";
         finalNum = 0;
         newNum = 0;
+    }
+
+    public void back(View view){
+
+
     }
 
 
@@ -118,7 +135,6 @@ public class MainActivity extends AppCompatActivity {
         stringNum = "0";
         calculate();
         opt = 'e';
-        display.setText(String.valueOf(finalNum));
 
 
     }
@@ -129,21 +145,29 @@ public class MainActivity extends AppCompatActivity {
 
             case 'p':
                 finalNum = finalNum + newNum;
+
+                display.setText(String.valueOf(finalNum));
                 newNum = 0;
                 break;
 
             case 'm':
                 finalNum = finalNum - newNum;
+
+                display.setText(String.valueOf(finalNum));
                 newNum = 0;
                 break;
 
             case 'x':
                 finalNum = finalNum * newNum;
+
+                display.setText(String.valueOf(finalNum));
                 newNum = 0;
                 break;
 
             case 'd':
                 finalNum = finalNum / newNum;
+
+                display.setText(String.valueOf(finalNum));
                 newNum = 0;
                 break;
 
