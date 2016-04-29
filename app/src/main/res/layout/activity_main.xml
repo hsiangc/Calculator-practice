@@ -318,4 +318,19 @@
         </TableLayout>
 
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Test Act"
+        android:id="@+id/button10"
+        android:onClick="clickTest" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MAp"
+        android:id="@+id/button11"
+        android:layout_gravity="right"
+        android:onClick="clickMap" />
 </LinearLayout>

@@ -18,8 +18,7 @@
     <string name="point">.</string>
     <string name="clear">C</string>
     <string name="back"> back </string>
-
-
+    <string name="title_activity_maps">Map</string>
 
 
 </resources>
