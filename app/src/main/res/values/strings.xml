@@ -19,6 +19,6 @@
     <string name="clear">C</string>
     <string name="back"> back </string>
     <string name="title_activity_maps">Map</string>
-
+    <string name="marker_name">Default</string>
 
 </resources>

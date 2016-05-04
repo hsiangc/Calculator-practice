@@ -11,8 +11,6 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
 
-    private Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9,
-            btnp, btnm, btnx, btnd, btnpt, btne, btnc;
     private TextView display; //運算顯示
     public double finalNum, newNum;
     public String stringNum = "0"; //輸入的文字
@@ -25,32 +23,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initKeyboard();
-    }
-
-    private void initKeyboard() {
-
-        btn0 = (Button) findViewById(R.id.button0);
-        btn1 = (Button) findViewById(R.id.button1);
-        btn2 = (Button) findViewById(R.id.button2);
-        btn3 = (Button) findViewById(R.id.button3);
-        btn4 = (Button) findViewById(R.id.button4);
-        btn5 = (Button) findViewById(R.id.button5);
-        btn6 = (Button) findViewById(R.id.button6);
-        btn7 = (Button) findViewById(R.id.button7);
-        btn8 = (Button) findViewById(R.id.button8);
-        btn9 = (Button) findViewById(R.id.button9);
-        btnp = (Button) findViewById(R.id.buttonp);
-        btnm = (Button) findViewById(R.id.buttonm);
-        btnx = (Button) findViewById(R.id.buttonx);
-        btnd = (Button) findViewById(R.id.buttond);
-        btnpt = (Button) findViewById(R.id.buttonpt);
-        btne = (Button) findViewById(R.id.buttone);
-        btnc = (Button) findViewById(R.id.buttonc);
         display = (TextView) findViewById(R.id.calculate);
-
-
     }
+
 
     public void clickNum(View view) {
 

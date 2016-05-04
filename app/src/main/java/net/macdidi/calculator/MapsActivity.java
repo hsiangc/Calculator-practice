@@ -1,7 +1,14 @@
 package net.macdidi.calculator;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.View;
+import android.widget.EditText;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -28,7 +35,7 @@ public class MapsActivity extends FragmentActivity implements
     private static final LatLng TPARENTTEST = new LatLng(-32, 130);
     private static final LatLng FLATTEST = new LatLng(-31, 140);
     private static final LatLng ROTATIONTEST = new LatLng(-36, 145);
-
+//    private static final LatLng CUSTOMTEST = new LatLng(-30, 110);
 
     //記號
 
@@ -39,6 +46,10 @@ public class MapsActivity extends FragmentActivity implements
     private Marker tparenttest;
     private Marker flattest;
     private Marker rotationtest;
+//    private Marker customtest;
+
+    private EditText editName;
+    private String stringName ="hi";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +59,9 @@ public class MapsActivity extends FragmentActivity implements
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
+
     }
 
 
@@ -66,7 +80,10 @@ public class MapsActivity extends FragmentActivity implements
 
         // Add a marker in Sydney and move the camera
 
+        customMarker();
         addMarkstoMap();
+        editName = (EditText) findViewById(R.id.inputName);
+
 
         mMap.addMarker(new MarkerOptions().position(SYDNEY).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(SYDNEY));
@@ -124,6 +141,36 @@ public class MapsActivity extends FragmentActivity implements
     @Override
     public void onMarkerDragEnd(Marker marker) {
         marker.setAlpha(1f);
+    }
+
+    public void editMarker(View view) {
+
+        stringName = editName.getText().toString();
+
+    }
+
+    public void customMarker(){
+
+
+        //客製化標記圖案
+        Bitmap bmp = Bitmap.createBitmap(150, 150, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bmp);
+        // paint defines the text color,
+        // stroke width, size
+        Paint color = new Paint();
+        color.setTextSize(35);
+        color.setColor(Color.BLUE);
+
+        //modify canvas
+        canvas.drawBitmap(BitmapFactory.decodeResource(getResources(),
+                R.drawable.custom_marker), 0,0, color);
+        canvas.drawText(stringName, 30, 40, color);
+
+        //add marker to Map
+        mMap.addMarker(new MarkerOptions().position(new LatLng(-30, 110))
+                .icon(BitmapDescriptorFactory.fromBitmap(bmp))
+                // Specifies the anchor to be at a particular point in the marker image.
+                .anchor(0.5f, 1));
     }
 }
 
