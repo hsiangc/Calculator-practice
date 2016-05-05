@@ -1,10 +1,12 @@
 package net.macdidi.calculator;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -35,7 +37,7 @@ public class MapsActivity extends FragmentActivity implements
     private static final LatLng TPARENTTEST = new LatLng(-32, 130);
     private static final LatLng FLATTEST = new LatLng(-31, 140);
     private static final LatLng ROTATIONTEST = new LatLng(-36, 145);
-//    private static final LatLng CUSTOMTEST = new LatLng(-30, 110);
+    private static final LatLng CUSTOMTEST = new LatLng(-30, 110);
 
     //記號
 
@@ -46,10 +48,16 @@ public class MapsActivity extends FragmentActivity implements
     private Marker tparenttest;
     private Marker flattest;
     private Marker rotationtest;
-//    private Marker customtest;
+    private Marker customtest;
 
     private EditText editName;
     private String stringName ="hi";
+
+
+    //客製化標記圖案
+    public Bitmap bmp = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
+    public Canvas canvas = new Canvas(bmp);
+    public Paint color = new Paint();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,6 +128,11 @@ public class MapsActivity extends FragmentActivity implements
                 .position(ROTATIONTEST)
                 .anchor(0.5f, 0.5f)
                 .rotation((float) 90.0));
+
+        customtest = mMap.addMarker(new MarkerOptions()
+                .position(CUSTOMTEST)
+                .icon(BitmapDescriptorFactory.fromBitmap(bmp))
+                .anchor(0.5f, 1));
     }
 
     @Override
@@ -147,30 +160,42 @@ public class MapsActivity extends FragmentActivity implements
 
         stringName = editName.getText().toString();
 
+
+        //modify canvas
+        canvas.drawBitmap(BitmapFactory.decodeResource(getResources(),
+                R.drawable.littlemarker), 0,0, color);
+        canvas.drawText(stringName, 20, 40, color);
+        customtest.setIcon(BitmapDescriptorFactory.fromBitmap(bmp));
+
     }
 
     public void customMarker(){
 
 
-        //客製化標記圖案
-        Bitmap bmp = Bitmap.createBitmap(150, 150, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(bmp);
         // paint defines the text color,
         // stroke width, size
-        Paint color = new Paint();
         color.setTextSize(35);
         color.setColor(Color.BLUE);
 
         //modify canvas
         canvas.drawBitmap(BitmapFactory.decodeResource(getResources(),
-                R.drawable.custom_marker), 0,0, color);
-        canvas.drawText(stringName, 30, 40, color);
+                R.drawable.littlemarker), 0,0, color);
+        canvas.drawText(stringName, 20, 40, color);
 
-        //add marker to Map
-        mMap.addMarker(new MarkerOptions().position(new LatLng(-30, 110))
-                .icon(BitmapDescriptorFactory.fromBitmap(bmp))
-                // Specifies the anchor to be at a particular point in the marker image.
-                .anchor(0.5f, 1));
+
+    }
+
+    public void openWeb(View view){
+
+        Intent intent = new Intent(this, WebActivity.class);
+        startActivity(intent);
+    }
+
+    public void openMap(View view){
+
+        Uri uri = Uri.parse("geo:40, 100");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
     }
 }
 

@@ -16,12 +16,13 @@
         android:id="@+id/inputName"
         android:layout_toLeftOf="@+id/button12"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/button14" />
 
     <Button
         android:layout_width="163dp"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="change name"
         android:id="@+id/button12"
         android:onClick="editMarker"
         android:layout_gravity="right"
@@ -29,7 +30,32 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="web"
+        android:id="@+id/button13"
+        android:onClick="openWeb"
+        android:layout_below="@+id/inputName"
+        android:layout_alignRight="@+id/button12"
+        android:layout_alignEnd="@+id/button12"
+        android:layout_toRightOf="@+id/inputName"
+        android:layout_toEndOf="@+id/inputName" />
+
+    <Button
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:text="map"
+        android:id="@+id/button14"
+        android:onClick="openMap"
+        android:layout_below="@+id/button12"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/button12"
+        android:layout_toStartOf="@+id/button12" />
+
 </RelativeLayout>
+
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
@@ -39,7 +65,7 @@
     android:layout_width="match_parent"
     android:layout_height="58dp"
     tools:context="net.macdidi.calculator.MapsActivity"
-    android:layout_weight="1.09" />
+    android:layout_weight="0.80" />
 
 
 </LinearLayout>
