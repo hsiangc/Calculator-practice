@@ -20,5 +20,6 @@
     <string name="back"> back </string>
     <string name="title_activity_maps">Map</string>
     <string name="marker_name">Default</string>
+    <string name="title_activity_web">Web</string>
 
 </resources>

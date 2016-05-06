@@ -11,13 +11,13 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_column="3"
+        android:layout_weight="1"
         android:background="#d2f1f7"
+        android:gravity="right"
+        android:singleLine="false"
         android:text=""
         android:textColor="#02032c"
-        android:textSize="50dp"
-        android:singleLine="false"
-        android:layout_weight="1"
-        android:gravity="right" />
+        android:textSize="50dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,11 +42,11 @@
                     android:layout_span="2"
                     android:background="@drawable/blue"
                     android:clickable="true"
+                    android:nestedScrollingEnabled="false"
                     android:onClick="clickBack"
                     android:text="@string/back"
                     android:textAlignment="center"
-                    android:textSize="40dp"
-                    android:nestedScrollingEnabled="false" />
+                    android:textSize="40dp" />
 
                 <Button
                     android:id="@+id/buttonc"
@@ -320,17 +320,37 @@
 
     </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Test Act"
-        android:id="@+id/button10"
-        android:onClick="clickTest" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <Button
+        android:id="@+id/button10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MAp"
+        android:onClick="clickTest"
+        android:text="Test Act" />
+
+    <Button
         android:id="@+id/button11"
-        android:onClick="clickMap" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="clickMap"
+        android:text="Map" />
+
+        <Button
+            android:id="@+id/button19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:text="Web map"
+            android:onClick="clickWebMap" />
+
+
+    </RelativeLayout>
 </LinearLayout>

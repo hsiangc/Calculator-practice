@@ -132,6 +132,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void clickWebMap(View view){
+
+
+        startActivity(new Intent(this, WebMapActivity.class));
+
+    }
+
     public void calculate() {
 
         switch (opt) {
