@@ -4,8 +4,11 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.webkit.WebView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -20,12 +23,11 @@ import java.io.OutputStreamWriter;
 public class WebMapActivity extends AppCompatActivity {
 
 
+    private static final String TAG = MainActivity.class.getName();
+    private static final String FILENAME = "myFile.html";
     public WebView WebMap;
     public ImageView Webimage;
     public Context mContext;
-    private static final String TAG = MainActivity.class.getName();
-    private static final String FILENAME = "myFile.html";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,25 @@ public class WebMapActivity extends AppCompatActivity {
 
 //        WebMap.loadUrl("file:///android_asset/maptest.html");
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        for(int i = 0; i < 5; i++){
+            menu.add(Menu.NONE, Menu.FIRST + i, Menu.NONE, "Item " + Integer.toString(i + 1));
+        }
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getGroupId() == Menu.NONE) {
+            Toast.makeText(getApplicationContext(),
+                    item.getTitle(),
+                    Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
     //以讀檔的方式寫
 public void methodOne ()
@@ -138,6 +159,9 @@ public void methodOne ()
 
     public void methodTwo(){
 
+        String varlat = "-22.5";
+        String varlng = "130.5";
+
         String strFront = "<html>\n" +
                 "  <head>\n" +
                 "    <style type=\"text/css\">\n" +
@@ -152,8 +176,7 @@ public void methodOne ()
                 "var map;\n";
 
         String strCus = "function initMap() {\n" +
-                "  var myLatLng = {lat: -25.363, lng: 131.044};\n" +
-                "\n" +
+                "  var myLatLng = {lat:" + varlat +", lng: "+ varlng + "};\n" +
                 "  var map = new google.maps.Map(document.getElementById('map'), {\n" +
                 "    zoom: 4,\n" +
                 "    center: myLatLng\n" +

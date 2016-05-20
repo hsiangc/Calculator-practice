@@ -46,13 +46,12 @@
                     android:onClick="clickBack"
                     android:text="@string/back"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
                 <Button
                     android:id="@+id/buttonc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="2"
                     android:layout_span="2"
                     android:background="@drawable/red"
                     android:clickable="true"
@@ -60,7 +59,7 @@
                     android:singleLine="false"
                     android:text="@string/clear"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
             </TableRow>
 
 
@@ -78,7 +77,7 @@
                     android:singleLine="false"
                     android:text="@string/seven"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
                 <Button
                     android:id="@+id/button8"
@@ -89,7 +88,7 @@
                     android:layout_alignParentEnd="false"
                     android:layout_alignParentStart="false"
                     android:layout_alignStart="@+id/button5"
-                    android:layout_column="1"
+                    android:layout_column="0"
                     android:allowUndo="false"
                     android:background="@drawable/blue"
                     android:clickable="true"
@@ -98,7 +97,7 @@
                     android:singleLine="false"
                     android:text="@string/eight"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
                 <Button
                     android:id="@+id/button9"
@@ -109,7 +108,7 @@
                     android:layout_alignParentEnd="false"
                     android:layout_alignParentStart="false"
                     android:layout_alignStart="@+id/button6"
-                    android:layout_column="2"
+                    android:layout_column="0"
                     android:allowUndo="false"
                     android:background="@drawable/blue"
                     android:clickable="true"
@@ -118,7 +117,7 @@
                     android:singleLine="false"
                     android:text="@string/nine"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
                 <Button
                     android:id="@+id/buttond"
@@ -127,7 +126,7 @@
                     android:layout_alignParentEnd="false"
                     android:layout_alignParentStart="false"
                     android:layout_alignTop="@+id/button9"
-                    android:layout_column="3"
+                    android:layout_column="0"
                     android:layout_toEndOf="@+id/button9"
                     android:layout_toRightOf="@+id/button9"
                     android:allowUndo="false"
@@ -138,13 +137,14 @@
                     android:singleLine="false"
                     android:text="@string/divideby"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_margin="0dp">
 
 
                 <Button
@@ -157,7 +157,7 @@
                     android:singleLine="false"
                     android:text="@string/four"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
                 <Button
                     android:id="@+id/button5"
@@ -169,7 +169,7 @@
                     android:onClick="clickNum"
                     android:text="@string/five"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
                 <Button
                     android:id="@+id/button6"
@@ -182,26 +182,26 @@
                     android:singleLine="false"
                     android:text="@string/six"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
                 <Button
                     android:id="@+id/buttonx"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_column="3"
                     android:background="@drawable/blue"
                     android:clickable="true"
                     android:onClick="clickMulti"
                     android:singleLine="false"
                     android:text="@string/multiply"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_margin="0dp">
 
                 <Button
                     android:id="@+id/button1"
@@ -214,7 +214,7 @@
                     android:singleLine="false"
                     android:text="@string/one"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
                 <Button
                     android:id="@+id/button2"
@@ -227,7 +227,7 @@
                     android:singleLine="false"
                     android:text="@string/two"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
                 <Button
                     android:id="@+id/button3"
@@ -240,7 +240,7 @@
                     android:singleLine="false"
                     android:text="@string/three"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
                 <Button
                     android:id="@+id/buttonm"
@@ -253,12 +253,12 @@
                     android:singleLine="false"
                     android:text="@string/minus"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
             </TableRow>
 
             <TableRow
-                android:layout_width="match_parent"
+                android:layout_width="matc_parentdp"
                 android:layout_height="match_parent">
 
                 <Button
@@ -272,7 +272,7 @@
                     android:singleLine="false"
                     android:text="@string/point"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
                 <Button
                     android:id="@+id/button0"
@@ -285,7 +285,7 @@
                     android:singleLine="false"
                     android:text="@string/zero"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
                 <Button
                     android:id="@+id/buttone"
@@ -298,7 +298,7 @@
                     android:singleLine="false"
                     android:text="@string/equals"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
                 <Button
                     android:id="@+id/buttonp"
@@ -311,7 +311,7 @@
                     android:singleLine="false"
                     android:text="@string/plus"
                     android:textAlignment="center"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
             </TableRow>
 
@@ -324,21 +324,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="clickTest"
-        android:text="Test Act" />
-
-    <Button
+        <Button
         android:id="@+id/button11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="clickMap"
-        android:text="Map" />
+            android:onClick="clickMap"
+        android:text="Map"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <Button
             android:id="@+id/button19"
